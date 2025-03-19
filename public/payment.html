@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+  <script src="https://js.stripe.com/v3/"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="homeStyle.css">
+  <link rel="stylesheet" href="navBarStyle.css">
+  <script src="navBarStyle.js" defer></script>
+</head>
+<body>
+  <!-- TODO:change menu to GEV-menu web component -->
+  <header id="GEV-navBar" class="flex" style="display: flex;gap: var(--gap, 1rem);">
+    <!-- Company Logo -->
+    <div>
+        <img src="imagestar/mcdonalds-150x150.jpg" alt="Logo of Corp" class="logo">
+    </div>
+    <!-- Dynamic Hamburger -->
+    <button class="mobile-nav-toggle " aria-controls="primary-navigation" aria-expanded="false">
+        <div class="menu-btn">
+            <div class="menu-btn_burger"></div>
+        </div>
+    </button>
+    <!-- Menu Section -->
+    <nav>
+        <ul data-visible="false" class="primary-navigation flex">
+            <li class="active">
+                <a class="ff-sans-cond uppercase text-white letter-spacing" href="/index.html">
+                    <span aria-hidden="true">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/upload.html">
+                    <span aria-hidden="true">Upload</span>
+                </a>
+            </li>
+            <li>
+                <a href="/info.html">
+                    <span aria-hidden="true">Info</span>
+                </a>
+            </li>
+            <li>
+                <a href="/payment.html">
+                    <span aria-hidden="true">Payment</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- End Menu Section -->
+  </header>
+  <!-- ______________ End Menu ____________ -->
+  <h1>Payment Form</h1>
+  <p>Card #: 4242424242424242</p>
+  <p>CVC #: 123</p>
+  <p>Date: 10/40</p>
+  <p>Zip Code: 33139</p>
+  <br>
+  <br>
+
+  <h3>Select Products:</h3>
+  <label><input type="checkbox" name="items" value="item1"> Product A ($15)</label><br>
+  <label><input type="checkbox" name="items" value="item2"> Product B ($20)</label><br>
+  <label><input type="checkbox" name="items" value="item3"> Product C ($25)</label><br>
+  <label><input type="checkbox" name="items" value="item4"> Product D ($30)</label><br>
+  <label><input type="checkbox" name="items" value="item5"> Product E ($35)</label><br>
+
+  <form id="payment-form" action="">
+    <section class="container">
+      <div class="card front-face">
+        <header>
+          <span class="logo">
+            <img src="images/logo.png" alt="Bank Logo" />
+            <h5>Master Card</h5>
+          </span>
+          <img src="images/chip.png" alt="Chip" class="chip" />
+        </header>
+
+        <div class="card-details">
+          <div class="name-number">
+            <h6>Card Number</h6>
+            <div id="cardNumber" class="number"></div> <!-- Stripe will mount here -->
+            <h6>Card Holder Name</h6>
+            <input id="cardName" class="name" type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="valid-date">
+            <h6>Valid Thru</h6>
+            <div id="expDate"></div> <!-- Stripe will mount here -->
+          </div>
+        </div>
+      </div>
+
+      <div class="card back-face">
+        <h6>For customer service call +977 4343 3433 or email at mastercard@gmail.com</h6>
+        <span class="magnetic-strip"></span>
+        <div class="signature"><div id="CVC"></div></div> <!-- Stripe will mount here -->
+        <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
+      </div>
+    </section>
+
+    <div id="card-errors" role="alert"></div>
+    <button type="submit">Submit Payment</button>
+  </form>
+
+  <script src="payment.js"></script>
+</body>
+</html>

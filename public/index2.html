@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <h1>Payment Form</h1>
+    <p>Card #: 4242424242424242</p>
+    <p>cvc #: 123</p>
+    <p>Date : 10 10 2040</p>
+    <p>Zip Code : 33139</p>
+    <br>
+    
+
+        <h3>Select Products:</h3>
+        <label><input type="checkbox" name="items" value="item1"> Product A ($15)</label><br>
+        <label><input type="checkbox" name="items" value="item2"> Product B ($20)</label><br>
+        <label><input type="checkbox" name="items" value="item3"> Product C ($25)</label><br>
+        <label><input type="checkbox" name="items" value="item4"> Product D ($30)</label><br>
+        <label><input type="checkbox" name="items" value="item5"> Product E ($35)</label><br>
+
+
+    <form id="payment-form">
+        <!-- <input type="text" id="first-name" name="firstName" placeholder="First Name" required>
+        <input type="text" id="last-name" name="lastName" placeholder="Last Name" required> -->
+        <div class="card">
+            <div class="side front-side">
+                <img class="card-logo" src="bank-of-america-logo.png" alt="Bank Logo">
+                <p class="card-holder-name">Before Semicolon</p>
+                <!-- This is where the Stripe Card Element will be mounted -->
+                <div id="card-element"></div>
+                <p class="exp-date"><small>expiration date:</small> 05/22</p>
+                </div>
+                <div class="side back-side">
+                <!-- You can add additional design elements for the back of the card here -->
+                </div>
+            </div>
+            <!-- Container for displaying any errors -->
+            <div id="card-errors" role="alert"></div>
+        <button type="submit">Submit Payment</button>
+    </form>
+    <script src="index.js"></script>
+</body>
+</html>

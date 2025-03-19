@@ -1,0 +1,37 @@
+before i use "npm install @stripe/stripe-js@5.7.0"
+I check the node_modules\@stripe\stripe-js\dist\ for
+stripe.esm.js, stripe.js, stripe.cjs.js and none of them are there.
+There is a dircetory called node_modules\@stripe\stripe-js\dist\stripe-js
+and inside has this files
+"
+03/03/2025  09:48 PM            14,767 checkout.d.mts
+03/03/2025  09:48 PM            14,767 checkout.d.ts
+03/03/2025  09:48 PM                48 confirmation-tokens.d.mts
+03/03/2025  09:48 PM                48 confirmation-tokens.d.ts
+03/03/2025  09:57 PM    <DIR>          elements
+03/03/2025  09:48 PM            32,086 elements-group.d.mts
+03/03/2025  09:48 PM            32,086 elements-group.d.ts
+03/03/2025  09:48 PM             3,358 embedded-checkout.d.mts
+03/03/2025  09:48 PM             3,358 embedded-checkout.d.ts
+03/03/2025  09:48 PM                69 ephemeral-keys.d.mts
+03/03/2025  09:48 PM                69 ephemeral-keys.d.ts
+03/03/2025  09:48 PM               597 financial-connections.d.mts
+03/03/2025  09:48 PM               597 financial-connections.d.ts
+03/03/2025  09:48 PM             4,281 hosted-checkout.d.mts
+03/03/2025  09:48 PM             4,281 hosted-checkout.d.ts
+03/03/2025  09:48 PM               429 index.d.mts
+03/03/2025  09:48 PM               429 index.d.ts
+03/03/2025  09:48 PM               262 orders.d.mts
+03/03/2025  09:48 PM               262 orders.d.ts
+03/03/2025  09:48 PM            51,949 payment-intents.d.mts
+03/03/2025  09:48 PM            51,949 payment-intents.d.ts
+03/03/2025  09:48 PM            17,205 payment-request.d.mts
+03/03/2025  09:48 PM            17,205 payment-request.d.ts
+03/03/2025  09:48 PM            11,660 setup-intents.d.mts
+03/03/2025  09:48 PM            11,660 setup-intents.d.ts
+03/03/2025  09:48 PM            83,414 stripe.d.mts
+03/03/2025  09:48 PM            83,414 stripe.d.ts
+03/03/2025  09:48 PM             3,064 token-and-sources.d.mts
+03/03/2025  09:48 PM             3,064 token-and-sources.d.ts
+"
+Cab it be one of them?
