@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload and Item Selection - StellarWave5</title>
+    <link rel="stylesheet" href="homeStyle.css">
+    <link rel="stylesheet" href="priceselection.css">
+    <link rel="stylesheet" href="navBarStyle.css">
+    <link rel="stylesheet" href="selectedOption.css">
+    <script src="navBarStyle.js" defer></script>
+</head>
+<body>
+    <header id="GEV-navBar" class="flex" style="display: flex; gap: var(--gap, 1rem);">
+        <div>
+            <img src="imagestar/mcdonalds-150x150.jpg" alt="Logo of Corp" class="logo">
+        </div>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+            <div class="menu-btn">
+                <div class="menu-btn_burger"></div>
+            </div>
+        </button>
+        <nav>
+            <ul data-visible="false" class="primary-navigation flex">
+                <li class="active">
+                    <a class="ff-sans-cond uppercase text-white letter-spacing" href="/index.html">
+                        <span aria-hidden="true">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/selectedOption.html">
+                        <span aria-hidden="true">Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/info.html">
+                        <span aria-hidden="true">Info</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/payment.html">
+                        <span aria-hidden="true">Payment</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Upload a File</h1>
+    <form id="uploadForm">
+        <div>
+            <label>Select File Type:</label><br>
+            <input type="radio" id="mp3" name="fileType" value="mp3" required>
+            <label for="mp3">MP3 (Max 5GB)</label><br>
+            <input type="radio" id="mp4" name="fileType" value="mp4">
+            <label for="mp4">MP4 (Max 7GB)</label>
+        </div>
+        <br>
+        <div>
+            <label for="fileInput">Choose File:</label>
+            <input type="file" id="fileInput" name="file" accept=".mp3,.mp4" required>
+        </div>
+        <br>
+        <button type="submit">Upload</button>
+    </form>
+    <div id="message"></div>
+
+    <h1>Items List</h1>
+    <div id="items-container"></div>
+    <button id="save-button">Save Selection</button>
+    <button id="send-total-button">Send Total to Server</button>
+
+    <script src="selectedOption.js"></script>
+</body>
+</html>

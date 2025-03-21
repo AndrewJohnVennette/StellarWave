@@ -5,11 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     request.onupgradeneeded = function (event) {
         const db = event.target.result;
-        if (!db.objectStoreNames.contains('items')) {
-            db.createObjectStore('items', { keyPath: 'articleId' });
-        }
-        if (!db.objectStoreNames.contains('check')) {
-            db.createObjectStore('check', { keyPath: 'id' });
+        if (!db.objectStoreNames.contains('Items')) {
+            db.createObjectStore('Items', { keyPath: 'articleId' },'check');
         }
         console.log('Database setup complete');
     };
