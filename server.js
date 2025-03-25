@@ -88,7 +88,8 @@ app.post('/create-payment-intent', async (req, res) => {
       payment_method: paymentMethodId,
       confirmation_method: 'manual',
       confirm: true,
-      return_url: 'http://localhost:3000/selectedOption.html' // Updated redirect
+      // return_url: 'http://localhost:3000/selectedOption.html' // Updated redirect
+      return_url: '/selectedOption.html'
     });
 
     res.json({ clientSecret: paymentIntent.client_secret, redirectUrl: '/selectedOption.html' });

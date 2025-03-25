@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
   <title>Payment</title>
   <script src="https://js.stripe.com/v3/"></script>
   <link rel="stylesheet" href="style.css">
@@ -12,8 +15,8 @@
 </head>
 <body>
   <header id="GEV-navBar" class="flex" style="display: flex;gap: var(--gap, 1rem);">
-    <div>
-        <img src="imagestar/mcdonalds-150x150.jpg" alt="Logo of Corp" class="logo">
+    <div class="logo">
+        <img src="/images/favicon.png" alt="Logo of Corp" class="logo">
     </div>
     <button class="mobile-nav-toggle " aria-controls="primary-navigation" aria-expanded="false">
         <div class="menu-btn">
@@ -28,7 +31,7 @@
                 </a>
             </li>
             <li>
-                <a href="/selectOption.html">
+                <a href="/selectedOption.html">
                     <span aria-hidden="true">Services</span>
                 </a>
             </li>

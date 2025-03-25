@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // IndexedDB Logic for Payment Page
-  const request = indexedDB.open('ItemsDB', 2);
+  const request = indexedDB.open('ItemsDB', 3);
 
   request.onsuccess = function (event) {
     const db = event.target.result;
@@ -84,11 +84,46 @@ document.addEventListener('DOMContentLoaded', function () {
       items.forEach(item => {
         const label = document.createElement('label');
         label.innerHTML = `
-          <input type="checkbox" name="indexeddb-items" value="${item.articleId}" ${item.boxCheck ? 'checked' : ''}>
+          <input type="checkbox" name="indexeddb-items" 
+          value="${item.articleId}" ${item.boxCheck ? 'checked' : ''}>
           ${item.name} ($${item.price.toFixed(2)})
         `;
         itemsContainer.appendChild(label);
         itemsContainer.appendChild(document.createElement('br'));
+      });
+
+      // Add event listener for checkbox changes
+      const checkboxes = document.querySelectorAll('input[name="indexeddb-items"]');
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+          const articleId = this.value;
+          const isChecked = this.checked;
+
+          // Update IndexedDB
+          const updateTransaction = db.transaction(['items'], 'readwrite');
+          const updateStore = updateTransaction.objectStore('items');
+          const getItemRequest = updateStore.get(articleId);
+
+          getItemRequest.onsuccess = function () {
+            const item = getItemRequest.result;
+            if (item) {
+              item.boxCheck = isChecked; // Update boxCheck value
+              const updateRequest = updateStore.put(item);
+
+              updateRequest.onsuccess = function () {
+                console.log(`Updated boxCheck for ${item.name} to ${isChecked}`);
+              };
+
+              updateRequest.onerror = function () {
+                console.error('Error updating item:', updateRequest.error);
+              };
+            }
+          };
+
+          getItemRequest.onerror = function () {
+            console.error('Error retrieving item:', getItemRequest.error);
+          };
+        });
       });
     };
 

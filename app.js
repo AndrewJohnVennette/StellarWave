@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let timeDom = document.querySelector('.carousel .time');
 
     thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-    let timeRunning = 3000;
-    let timeAutoNext = 7000;
+    let timeRunning = 4000;
+    let timeAutoNext = 8000;
 
     nextDom.onclick = function() {
         showSlider('next');
@@ -51,15 +51,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // IndexedDB Logic
-    const request = indexedDB.open('ItemsDB', 2);
+    const request = indexedDB.open('ItemsDB', 3);
 
     request.onupgradeneeded = function (event) {
         const db = event.target.result;
         if (!db.objectStoreNames.contains('items')) {
-            db.createObjectStore('items', { keyPath: 'articleId' });
-        }
-        if (!db.objectStoreNames.contains('check')) {
-            db.createObjectStore('check', { keyPath: 'id' });
+            db.createObjectStore('items', { 
+                keyPath: 'articleId' 
+            });
         }
         console.log('Database setup complete');
     };

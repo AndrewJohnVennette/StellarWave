@@ -1,0 +1,47 @@
+.wrapper {
+	padding: 30px 30px 300px;
+}
+
+.columns {
+	margin: 0 -15px;
+	flex-wrap: wrap;
+	display: flex;
+}
+
+.col {
+	margin: 0 15px 30px;
+	padding: 20px;
+	border-radius: 6px;
+	box-sizing: border-box;
+	background: rgba(255,255,255,0.12);
+}
+
+.col-100 {
+	width: calc(100% - 30px);
+}
+
+.col-50 {
+	width: calc(50% - 30px);
+}
+
+.col-33 {
+	width: calc(33.33% - 30px);
+}
+
+.col-25 {
+	width: calc(25% - 30px);
+}
+
+@media screen and (max-width: 1000px) {
+	
+	.col-25 {
+		width: calc(50% - 30px);
+	}
+}
+
+@media screen and (max-width: 800px) {
+	
+	.col-50, .col-33, .col-25 {
+		width: calc(100% - 30px);
+	}
+}
