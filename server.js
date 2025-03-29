@@ -72,31 +72,32 @@ app.post('/api/total', (req, res) => {
 
 app.post('/create-payment-intent', async (req, res) => {
   try {
-    const { firstName, lastName, items: selectedItems, paymentMethodId, totalAmount } = req.body;
-    let amount = totalAmount || 0;
+        const { firstName, lastName, items: selectedItems, paymentMethodId, totalAmount } = req.body;
+        let amount = totalAmount || 0;
 
-    if (!totalAmount && selectedItems) {
-      amount = selectedItems.reduce((sum, item) => sum + (paymentItems[item]?.price || 0), 0);
-    }
-    if (amount === 0) {
-      return res.status(400).send({ error: "Invalid item selection or total amount" });
-    }
+        if (!totalAmount && selectedItems) {
+          amount = selectedItems.reduce((sum, item) => sum + (paymentItems[item]?.price || 0), 0);
+        }
+        if (amount === 0) {
+          return res.status(400).send({ error: "Invalid item selection or total amount" });
+        }
 
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: amount,
-      currency: 'usd',
-      payment_method: paymentMethodId,
-      confirmation_method: 'manual',
-      confirm: true,
-      // return_url: 'http://localhost:3000/selectedOption.html' // Updated redirect
-      return_url: '/selectedOption.html'
-    });
+        const paymentIntent = await stripe.paymentIntents.create({
+          amount: amount,
+          currency: 'usd',
+          payment_method: paymentMethodId,
+          confirmation_method: 'manual',
+          confirm: true,
+          //return_url: 'http://localhost:3000/selectedOption.html' // Updated redirect
+          // return_url: '/selectedOption.html'
+          return_url: `${req.protocol}://${req.get('host')}/selectedOption.html` // Dynamic URL
+        });
 
-    res.json({ clientSecret: paymentIntent.client_secret, redirectUrl: '/selectedOption.html' });
-  } catch (err) {
-    console.error(err);
-    res.status(500).send({ error: err.message });
-  }
+        res.json({ clientSecret: paymentIntent.client_secret, redirectUrl: '/selectedOption.html' });
+      } catch (err) {
+        console.error(err);
+        res.status(500).send({ error: err.message });
+      }
 });
 
 app.post('/upload', upload.single('file'), (req, res) => {
