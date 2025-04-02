@@ -9,10 +9,20 @@
     <title>STELLARWAVE5</title>
     <link rel="stylesheet" href="homeStyle.css">
     <link rel="stylesheet" href="navBarStyle.css">
+    <script type="speculationrules">
+        {
+            "prerender": [{
+                        "where": { "selector_matches": ".prerender" }
+            }],
+            "prefetch": [{
+                        "where": { "selector_matches": ".prefetch" }
+            }]
+        }
+    </script>
     <script src="navBarStyle.js" defer></script>
 </head>
 <body>
-    <header id="GEV-navBar" class="flex" style="display: flex;gap: var(--gap, 1rem);">
+    <header id="GEV-navBar" class="flex">
         <div class="logo">
             <img src="/images/favicon.png" alt="Logo of Corp" class="logo">
         </div>

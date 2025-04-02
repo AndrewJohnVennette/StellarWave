@@ -6,11 +6,28 @@ body {
     justify-content: center;
     background-image: url(imagestar/star-bottle-4-blu.webp);
 }
-
+:root {
+    --minColumnSize: 12rem
+}
 #uploadForm {
     text-align: center;
     margin: 20px auto; /* Added for spacing */
-    max-width: 600px; /* Limit form width */
+    padding: 10px 20px;
+    max-width: 40%; /* Limit form width */
+    border: solid 1px #fff;
+    border-radius: 5px;
+}
+#items-container{
+    /* display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--minColumnSize), 100%), 1fr)); */
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    & > *{
+        flex: 1;
+    }
 }
 
 .error {

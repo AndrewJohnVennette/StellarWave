@@ -12,6 +12,22 @@
     <link rel="stylesheet" href="navBarStyle.css">
     <link rel="stylesheet" href="selectedOption.css">
     <link rel="stylesheet" href="selrctedOption2.css">
+    <style>
+        .checked-item {
+            text-align: center;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #474242;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
     <script src="navBarStyle.js" defer></script>
 </head>
 <body>
@@ -50,77 +66,43 @@
         </nav>
     </header>
 
-    <h1>Upload a File</h1>
-    <form id="uploadForm">
-        <div>
-            <label>Select File Type:</label><br>
-            <input type="radio" id="mp3" name="fileType" value="mp3" required>
-            <label for="mp3">MP3 (Max 5GB)</label><br>
-            <input type="radio" id="mp4" name="fileType" value="mp4">
-            <label for="mp4">MP4 (Max 7GB)</label>
-        </div>
-        <br>
-        <div>
-            <label for="fileInput">Choose File:</label>
-            <input type="file" id="fileInput" name="file" accept=".mp3,.mp4" required>
-        </div>
-        <br>
-        <button type="submit">Upload</button>
-    </form>
-    <div id="message"></div>
-
     <h1>Items List</h1>
     <div id="items-container"></div>
-    <button id="save-button">Save Selection</button>
-    <button id="send-total-button">Send Total to Server</button>
 
     <br><br><br>
     <div class="wrapper">
-	
         <div class="columns">
-            
             <div class="col col-100">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </div>
-            
             <div class="col col-50">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </div>
-            
             <div class="col col-50">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </div>
-            
             <div class="col col-33">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </div>
-            
             <div class="col col-33">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </div>
-            
             <div class="col col-33">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </div>
-            
             <div class="col col-25">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
             </div>
-            
             <div class="col col-25">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
             </div>
-            
             <div class="col col-25">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
             </div>
-            
             <div class="col col-25">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
             </div>
-            
         </div>
-        
     </div>
 
     <script src="selectedOption.js"></script>

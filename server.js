@@ -12,9 +12,10 @@ app.use(express.json());
 
 // Sample JSON data for item selection with boxCheck
 const selectItems = [
-  { articleId: '1ght', name: 'Laptop', price: 999.99, boxCheck: false },
-  { articleId: '2ght', name: 'Mouse', price: 24.99, boxCheck: false },
-  { articleId: '3ght', name: 'Keyboard', price: 59.99, boxCheck: false }
+  { articleId: '1ght', name: 'Text', price: 999.99, boxCheck: false },
+  { articleId: '2ght', name: 'Audio', price: 24.99, boxCheck: false },
+  { articleId: '3ght', name: 'Picture', price: 59.99, boxCheck: false },
+  { articleId: '4ght', name: 'Video', price: 59.99, boxCheck: false }
 ];
 
 // Payment items (unchanged)
