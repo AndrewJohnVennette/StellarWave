@@ -1,0 +1,206 @@
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap'); */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* line-height: 1.5; */
+    /* background-image: url(./mountains-736886_1280.jpg); */
+    background-color: #333;
+    overflow-x: hidden;
+}
+
+/********************** NavBar Section **********************/
+:root {
+    --gap: 2rem;
+    --textColor: #fff;
+    --textSize: 1rem;
+    --borderBottomLeftRadius: 55%;
+}
+
+#GEV-navBar{
+    font-family: Poppins, Dancing, sans-serif;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap, 1rem);
+
+    height: 50px;
+    position: relative;
+    z-index: 100;
+}
+
+#GEV-navBar nav {
+    font-size: var(--textSize, 16px);
+}
+
+#GEV-navBar ul {
+    margin: 0;
+    padding: 0;
+    border-bottom-left-radius:var(--borderBottomLeftRadius, 50%);
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+#GEV-navBar ul li{
+    padding-top: 15px;
+}
+
+#GEV-navBar div.logo{
+    padding: 1.8rem 0 0 0;
+}
+#GEV-navBar img.logo {
+    width: 60px;
+    height: inherit;
+    margin: 0 0 0 1rem;
+    border-radius: 7px;
+}
+
+#GEV-navBar .mobile-nav-toggle {
+    display: none;
+}
+
+#GEV-navBar .primary-navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    /* background: hsl(0 0% 0% / .5);
+    backdrop-filter: blur(2rem); */
+}
+
+@supports(backdrop-filter: blur(2rem)) {
+    #GEV-navBar .primary-navigation {
+        background: hsl(0 0% 100% / .07);
+        backdrop-filter: blur(2.2rem);
+    }
+}
+
+#GEV-navBar .primary-navigation a {
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+#GEV-navBar .primary-navigation a>[aria-hidden="true"] {
+    font-weight: 700;
+    margin-inline-end: .75rem;
+}
+
+@media(min-width: 35rem) {
+    #GEV-navBar .primary-navigation {
+        --gap: clamp(1.5rem, 5vw, 3rem);
+        padding-block: 2rem;
+        padding-inline: clamp(3rem, 8vw, 10rem);
+    }
+}
+
+@media(max-width: 35rem) {
+    #GEV-navBar{
+        position: static;
+    }
+    #GEV-navBar .primary-navigation {
+        --gap: 2rem;
+        position: fixed;
+        inset: 0 0 0 30%;
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2rem;
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+
+    #GEV-navBar .primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    #GEV-navBar .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        background-color: transparent;
+        /* background-image: url(./Hamburger_icon.svg.png); */
+        background-repeat: no-repeat;
+        width: 4rem;
+        aspect-ratio: 1;
+        border: 0;
+        top: 2rem;
+        right: 2rem;
+        z-index: 5000;
+        border: 1px solid transparent;
+        background-color: transparent;
+    }
+
+    #GEV-navBar .mobile-nav-toggle[aria-expanded="true"] {
+        content: '';
+    }
+
+    #GEV-navBar .menu-btn {
+        display: block;
+    }
+}
+
+@media(min-width: 35rem)and (max-width: 55rem) {
+    #GEV-navBar .primary-navigation a>[aria-hidden="true"] {
+        display: none;
+    }
+}
+
+@media(min-width: 55rem) {
+    
+}
+
+/* Hamburger */
+#GEV-navBar .menu-btn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    /* border: 3px solid #fff; */
+}
+#GEV-navBar .menu-btn_burger{
+    width: 50px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all .5s ease-in-out;
+    left: 0;
+    position: absolute;
+}
+#GEV-navBar .menu-btn_burger::before,
+#GEV-navBar .menu-btn_burger::after{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all .5s ease-in-out;
+    left: 0;
+}
+#GEV-navBar .menu-btn_burger::before{
+    transform: translateY(-16px);
+}
+#GEV-navBar .menu-btn_burger::after{
+    transform: translateY(16px);
+}
+
+/* Animation */
+#GEV-navBar .menu-btn.open .menu-btn_burger{
+    transform: translate(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+#GEV-navBar .menu-btn.open .menu-btn_burger::before{
+    transform: translate(50px);
+    transform: rotate(45deg) translate(35px, -35px);
+}
+#GEV-navBar .menu-btn.open .menu-btn_burger::after{
+    transform: translate(50px);
+    transform: rotate(-45deg) translate(35px, 35px);
+}

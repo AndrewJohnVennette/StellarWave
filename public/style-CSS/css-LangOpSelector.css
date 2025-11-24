@@ -1,0 +1,141 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    color: #aaa;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #333;
+} */
+
+/* a{
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 650;
+    transition: .3s linear;
+    border-radius: 10%;
+}
+a:hover{
+    background: #82ce87;
+}
+a.active{
+    background: #a3d6af;
+} */
+.primary-navigation{
+    .langs{
+        background: #22b455;
+        text-align: center;
+        margin: 10px 20px;
+        padding: 12px 24px;
+    }
+    .content{
+        margin: 0 50px;
+        padding: 0 30px;
+    }
+    .content :where(h1,h2){
+        text-align: center;
+        margin: 15px;
+    }
+    .content h1{
+        font-size: 40px;
+    }
+    .content p{
+        padding: 0 100px;
+    }
+    /* **************************************** */
+    select,
+    ::picker(select){
+        appearance: base-select;
+    }
+    select{
+        width: 110px;
+        padding: 0px 1px;
+    }
+    selectedcontent,
+    option{
+        /* margin: 1px 0 0 20px; */
+        display: flex;
+        gap: .3rem;
+        align-items: center;
+    }
+    option{
+        padding-block: .3rem;
+    }
+    .countryName{
+        color: #fff;
+    }
+    .flag{
+        width: 30px;
+        height: 20px;
+    }
+    option::checkmark{
+        display: none;
+    }
+    option:checked{
+        background: hsl(200, 80%, 80%);
+    }
+}
+/* .langs{
+    background: #22b455;
+    text-align: center;
+    margin: 10px 20px;
+    padding: 12px 24px;
+}
+.content{
+    margin: 0 50px;
+    padding: 0 30px;
+}
+.content :where(h1,h2){
+    text-align: center;
+    margin: 15px;
+}
+.content h1{
+    font-size: 40px;
+}
+.content p{
+    padding: 0 100px;
+} */
+
+/* *************************************************** */
+/* ********** Selectedcontent ********** */
+/* *************************************************** */
+
+/* select,
+::picker(select){
+    appearance: base-select;
+}
+select{
+    width: 200px;
+    padding: 7px 10px;
+}
+selectedcontent,
+option{
+    /* margin: 1px 0 0 20px; * /
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+option{
+    padding-block: .35rem;
+}
+.countryName{
+    color: #fff;
+}
+.flag{
+    width: 30px;
+    height: 20px;
+}
+option::checkmark{
+    display: none;
+}
+option:checked{
+    background: hsl(200, 80%, 80%);
+} */

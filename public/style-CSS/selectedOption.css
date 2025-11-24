@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(/webp-images/star-bottle-7B.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+:root {
+    --minColumnSize: 12rem
+}
+#uploadForm {
+    text-align: center;
+    margin: 20px auto; /* Added for spacing */
+    padding: 10px 20px;
+    max-width: 40%; /* Limit form width */
+    border: solid 1px #fff;
+    border-radius: 5px;
+}
+#items-container{
+    /* display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--minColumnSize), 100%), 1fr)); */
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    & > *{
+        flex: 1;
+    }
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+.success {
+    color: green;
+    margin-top: 10px;
+}
+
+/* Ensure item selection section aligns with form styling */
+#items-container {
+    margin: 20px auto;
+    max-width: 600px; /* Match form width */
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff; /* Match selectedOption.css */
+}
+
+#save-button, #send-total-button {
+    display: inline-block; /* Align buttons horizontally */
+}
+
+h1 {
+    color: #ffffff;
+}
+
+#items-container {
+    margin-top: 20px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.item input[type="checkbox"] {
+    margin-right: 15px;
+}
+
+.item span {
+    margin-right: 15px;
+    flex: 1; /* Distributes space evenly */
+}
+
+#save-button, #send-total-button {
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#save-button:hover, #send-total-button:hover {
+    background-color: #2980b9;
+}

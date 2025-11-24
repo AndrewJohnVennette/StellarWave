@@ -1,0 +1,49 @@
+/* Style the dialog */
+    dialog {
+        padding: 2rem;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        max-width: 400px;
+        width: 90%;
+        margin: auto;
+        .close-btn {
+            background: #dc3545;
+            color: white;
+            margin-top: 1rem;
+            &:hover { 
+                background: #c82333; 
+            }
+        }
+        /* Gray out the background when dialog is open */
+        &::backdrop {
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+        backdrop-filter: blur(3px);     /* Optional: blur effect */
+        }
+
+    }
+
+    /* Gray out the background when dialog is open */
+    /* dialog::backdrop {
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+      backdrop-filter: blur(3px);     /* Optional: blur effect */
+    } */
+
+    /* Style buttons */
+    /* button {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+        cursor: pointer;
+        border: none;
+        border-radius: 6px;
+    } */
+
+    /* .open-btn {
+        background: #007bff;
+        color: white;
+    } */
+
+
+
+    /* .open-btn:hover { background: #0056b3; }
+    .close-btn:hover { background: #c82333; } */

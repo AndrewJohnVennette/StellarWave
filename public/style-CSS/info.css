@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(/webp-images/Sirio-B-copia-B.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.single-column {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.single-column p {
+    margin-bottom: 1rem;
+}
+
+.three-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.final-column {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.column h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.addPadding{
+    margin: 0 2.2rem;
+}
+
+/* Tablet breakpoint */
+@media (max-width: 768px) {
+    .two-column,
+    .three-column {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .hero {
+        padding: 3rem 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .two-column,
+    .single-column,
+    .three-column,
+    .final-column {
+        padding: 1.5rem;
+    }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 480px) {
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .two-column,
+    .single-column,
+    .three-column,
+    .final-column {
+        padding: 1rem;
+    }
+
+    .column h2 {
+        font-size: 1.2rem;
+    }
+}
